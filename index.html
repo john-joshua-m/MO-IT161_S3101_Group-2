@@ -8,21 +8,32 @@
 </head>
 <body>
     <div class="header-container">
-        <h1>My daily planner <p id="current-day"></p></h1>
-        <button id="dark-mode">Dark Mode: Off</button>
+        <div class="header-info">
+            <h1>Tick and Type: My Organizer <p id="current-day"></p></h1>
+            <button id="dark-mode">🔴 Dark Mode: Off</button>
+            <div class="date-div">
+                <p>Today's date is: <span class="info" id="current-date"></span></p>
+            </div>
+        </div>
+    <div class="quote-container">
+        <p id="quote-text">Quote Text</p>
+        <p id="quote-author">― Author Name</p>
+    </div>
+    
     </div>
     
     <div class="flex-container">
 
         <div class="to-do-container">
-            <h2>To-do List</h2> 
+            <h2>To-do List</h2> <span class="emoji">✅</span>
+            <div id="items" >
                 <div id="item">        
-                </div>
+</div>
             </div>
 
             <template id="item-template">
                 <input type="checkbox" class="item-completed">
-                <input type="text" class="item-description" placeholder="Enter your task here...">
+                <input type="text" class="item-description" placeholder="To-Do item...">
             </template>
             <button id="add">Add an item</button>
             <button id="reset-all">Reset Everything</button>
@@ -30,12 +41,12 @@
 
         <div class="weather-info-container">
             <div id="weather-div">
-                <h2>Temperature and Time</h2>
+                <h2>Temperature and Time</h2> <span class="emoji">🕒🌡️</span>
                 <p>Temperature in °C: <span class="info" id="temp-celsius"></span> 
                    <p>Feels like:<span class="info"  id="feels-celsius"></span></p>
                 </p>
 
-                <p></span></p>
+               
                 <p>Temperature in °F: <span class="info" id="temp-fahrenheit"></span>
                     <p>Feels like: <span class="info" id="feels-fahrenheit"></span> </p> 
                 </p>
@@ -47,9 +58,7 @@
                     
                     
                 </div>
-                <div class="date-div">
-                    <p>Today's date is: <span class="info" id="current-date"></span></p>
-                </div>
+             
            
                 
                   
@@ -59,12 +68,12 @@
 
         
         <div class="sticky-container">
-            <h2 id="sticky-title">Sticky Note Pad</h2>
+            <h2 id="sticky-title">Sticky Note Pad</h2><span class="emoji">📝</span>
             <button id="add-note" type="button">Add note</button>
             <div id="sticky-notes">
          
                 
-                <textarea class="note" placeholder="Enter your note here"></textarea>
+                <textarea class="note" placeholder="Empty sticky note / Double click to delete a note"></textarea>
           
             </div>
        
