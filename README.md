@@ -6,7 +6,7 @@ A simple, single-page web application designed to help users manage their day wi
 
 Access the live application here:
 
-> [Insert your actual GitHub Pages URL here, e.g., https://john-joshua-m.github.io/daily-planner-project/]
+https://john-joshua-m.github.io/MO-IT161_S3101_Group-2/
 
 ***
 
