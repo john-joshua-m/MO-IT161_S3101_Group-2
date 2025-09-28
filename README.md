@@ -27,13 +27,13 @@ Since this is a client-side web application, no server is required for basic vie
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [Your Repository URL]
+    Github Repo: https://github.com/john-joshua-m/MO-IT161_S3101_Group-2
     ```
 2.  **Open:** Open the `index.html` file directly in your browser.
 
 ### Development Note
 
-The application is styled with a custom CSS framework using **Calibri** as the primary system font and **Pacifico** (imported) for script elements. The layout is optimized for mobile screens via a `@media` query.
+The application is styled with a custom CSS framework using **Calibri** as the primary system font and **Pacifico** (imported) for script elements. The layout is optimized for mobile screens via a `@media` query, which will soon be implemented.
 
 ***
 
