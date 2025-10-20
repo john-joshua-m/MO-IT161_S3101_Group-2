@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/style.css">  <!-- Link to our CSS style sheet -->
-    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="styles/style.css"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <title>Tick and Type: My Organizer</title>
 </head>
-<body class="body-custom">
-    <div class="container p-4">
+<body class="body-custom"> 
+    <div id="app" class="container p-4">
         <header class="container-fluid p-4">
             <div class="d-flex align-items-center" id="h1-gif-block">
-                 <span class="emoji ms-2"><img src="images/planner-v2.gif" style="height: 50px; width: 50px; vertical-align: middle;"></span> 
-                 <h1  class="display-4  mb-0 h1-custom h1-text-custom">Tick and Type: My Organizer
-                    <span id="current-day" class="lead text-secondary d-inline-block ms-3"> </span>  <!-- Placeholder for API  -->
-                </h1>
+                   <span class="emoji ms-2"><img src="images/planner-v2.gif" style="height: 50px; width: 50px; vertical-align: middle;"></span> 
+                   <h1  class="display-4  mb-0 h1-custom h1-text-custom">Tick and Type: My Organizer
+                        <span id="current-day" class="lead text-secondary d-inline-block ms-3">{{ currentDay }}</span>   </h1>
             </div>
                 
             <br>
@@ -24,8 +22,7 @@
             <br>
             <br>
             <div class="date-div mt-2">
-                <p class="mb-0">Today's date is: <span class="info fw-bold" id="current-date"></span></p>
-            </div>
+                <p class="mb-0">Today's date is: <span class="info fw-bold" id="current-date">{{ currentDate }}</span></p> </div>
             <br>
             
             <div class="quote-container card bg-light p-3 mt-3 quote-div">
@@ -37,69 +34,53 @@
         <main class="d-flex flex-wrap gap-5 ">
 
             <div class="planner-container card p-4 shadow-sm col-12 col-lg-3  m-0">
-                <div id="weather-div">
-                    <h2 class="card-title d-flex align-items-center"  style="padding-bottom: 20px;">Temperature & Time 
-                        <span class="emoji ms-2"><img src="images/clock.gif" style="height: 50px; width: 50px; vertical-align: middle;"></span></h2>
-                        <!--<span class="emoji ms-2"><img src="images/hot.gif" style="height: 30px; width: 30px; vertical-align: middle;"></span> -->
-                    </h2>
-            
-
-                    <p class="mb-1">Temperature in °C: <span class="info fw-bold" id="temp-celsius">--</span></p> 
-                    <p class="mb-1 ms-3 text-muted">Feels like: <span class="info" id="feels-celsius">--</span></p>
-
-                    <p class="mb-1 mt-2">Temperature in °F: <span class="info fw-bold" id="temp-fahrenheit">--</span></p>
-                    <p class="mb-1 ms-3 text-muted">Feels like: <span class="info" id="feels-fahrenheit">--</span></p> 
-
-                    <p class="mt-3">Location: <span class="info" id="city">--</span>, <span class="info" id="country">--</span></p>
-
-                    <div class="clock-container border-top pt-2 mt-3">
-                        <p class="mb-0">System Time: <span class="info fw-bold" id="clock">--</span></p>
-                    </div>
-                </div>
+                 <div id="weather-div">
+                     <h2 class="card-title d-flex align-items-center"  style="padding-bottom: 20px;">Temperature & Time 
+                          <span class="emoji ms-2"><img src="images/clock.gif" style="height: 50px; width: 50px; vertical-align: middle;"></span></h2>
+                     
+                     <p class="mb-1">Temperature in °C: <span class="info fw-bold" id="temp-celsius">{{ tempCelsius }}</span></p> <p class="mb-1 ms-3 text-muted">Feels like: <span class="info" id="feels-celsius">{{ feelsCelsius }}</span></p> <p class="mb-1 mt-2">Temperature in °F: <span class="info fw-bold" id="temp-fahrenheit">{{ tempFahrenheit }}</span></p> <p class="mb-1 ms-3 text-muted">Feels like: <span class="info" id="feels-fahrenheit">{{ feelsFahrenheit }}</span></p> <p class="mt-3">Location: <span class="info" id="city">{{ city }}</span>, <span class="info" id="country">{{ country }}</span></p> <div class="clock-container border-top pt-2 mt-3">
+                         <p class="mb-0">System Time: <span class="info fw-bold" id="clock">{{ currentTime }}</span></p> </div>
+                 </div>
             </div>
-
-
+            
             <div class="planner-container card p-4 shadow-sm col-12 col-lg-4">
                 <h2 class="card-title" style="padding-bottom: 20px;">To-do List 
-                    <span class="emoji ms-2"><img src="images/list.gif" style="height: 50px; width: 50px; vertical-align: middle;"></span></h2>                
-                </h2>
+                    <span class="emoji ms-2"><img src="images/list.gif" style="height: 50px; width: 50px; vertical-align: middle;"></span></h2> 
                 
-                <input type="text" id="new-item-input" class="form-control form-control-lg mb-3" placeholder="Enter new to-do item...">
+                <input type="text" v-model="newItemInput" @keyup.enter="addItem" class="form-control form-control-lg mb-3" placeholder="Enter new to-do item...">
 
                 <ul id="items" class="list-group list-group-flush mb-3">
-                    </ul>
-                
-                <div class="d-flex justify-content-between">
-                    <button id="add" class="btn btn-success add-item">Add an item</button>
-                    <button class="btn btn-danger reset-all">Reset Everything</button>
-                </div>
-
-                <template id="item-template">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <input type="text" class="form-control item-description border-0 shadow-none bg-transparent me-3" placeholder="To-Do item...">
+                    <li v-for="(item, index) in items" :key="index" class="list-group-item d-flex justify-content-between align-items-center">
+                        <input type="text" v-model="item.description" class="form-control item-description border-0 shadow-none bg-transparent me-3" :class="{ 'text-decoration-line-through': item.completed }">
                         
                         <div class="d-flex align-items-center">
-                            <input type="checkbox" class="form-check-input item-completed me-3" aria-label="Mark as complete">
-                            <button class="btn btn-sm btn-outline-danger delete-item" type="button">Delete</button>
+                            <input type="checkbox" v-model="item.completed" class="form-check-input item-completed me-3" aria-label="Mark as complete">
+                            <button class="btn btn-sm btn-outline-danger delete-item" type="button" @click="deleteItem(index)">Delete</button>
                         </div>
                     </li>
-                </template>
+                </ul>
+                
+                <div class="d-flex justify-content-between">
+                    <button id="add" class="btn btn-success add-item" @click="addItem">Add an item</button>
+                    <button class="btn btn-danger reset-all" @click="resetAll">Reset Everything</button>
+                </div>
             </div>
 
             <div class="planner-container card p-4 shadow-sm col-12 col-lg-4">
-                <h2 id="sticky-title" class="card-title" style="padding-bottom: 20px;">Sticky Note Pad 
-                    <span class="emoji ms-2"><img src="images/notepad.gif" style="height: 50px; width: 50px; vertical-align: middle;"></span>
-                </h2>
-                
-                <button id="add-note" type="button" class="btn btn-success btn-sm mt-2 mb-3">Add note</button>
-                
-                <div id="sticky-notes" class="d-grid gap-2">
-                    <textarea class="note form-control" rows="4" placeholder="Empty sticky note / Double click to delete a note"></textarea>
-                </div>
+                 <h2 id="sticky-title" class="card-title" style="padding-bottom: 20px;">Sticky Note Pad 
+                     <span class="emoji ms-2"><img src="images/notepad.gif" style="height: 50px; width: 50px; vertical-align: middle;"></span>
+                 </h2>
+                 
+                 <button id="add-note" type="button" class="btn btn-success btn-sm mt-2 mb-3">Add note</button>
+                 
+                 <div id="sticky-notes" class="d-grid gap-2">
+                     <textarea class="note form-control" rows="4" placeholder="Empty sticky note / Double click to delete a note"></textarea>
+                 </div>
             </div>
         </main>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>  <!-- Placeholder for our future JS integration -->
-    </body>
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <script src="scripts/app.js"></script> </body>
 </html>
