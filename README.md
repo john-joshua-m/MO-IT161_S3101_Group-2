@@ -1,46 +1,53 @@
-# Tick and Type: Road to an Organized Life 
+# 📝 Tick and Type: Road to an Organized Life
 
-A simple, single-page web application designed to help users manage their day with essential tools: a to-do list, weather/time display, and persistent sticky notes.
+A responsive, component-based application built with **Vue.js** and styled using **Bootstrap 5**.  
+It serves as a clean, centralized digital dashboard for managing daily tasks and persistent notes.
 
-## Live Demo
+---
 
-Access the live application here:
+## 💡 Problem Statement
 
-https://john-joshua-m.github.io/MO-IT161_S3101_Group-2/
+In an increasingly busy digital world, users often struggle with scattered daily tasks and notes across multiple apps and paper sources, leading to disorganization and missed priorities.  
 
-***
+**"Tick and Type"** solves this by offering a single, integrated dashboard to track to-dos, jot down quick thoughts, and check the time at a glance.
 
-## Features
+---
 
-* **Custom Layout:** Built with CSS Grid and Flexbox for an organized, responsive 3-column desktop layout.
-* **Persistent To-Do List:** Users can add, check off, and delete tasks which are saved using JavaScript's Local Storage.
-* **Sticky Note Pad:** Functionality to add, edit, and save personal notes (also using Local Storage).
-* **Dynamic Information:** Displays current system time and includes placeholders for external **Weather API** and **Quote of the Day API** integration.
-* **Dark Mode Toggle:** Easily switches between light and dark themes for user comfort.
-* **Handwriting Font:** Uses the **Pacifico** Google Font for a distinct, personal aesthetic.
+## 🎯 Target Users
 
-***
+This tool is designed for anyone needing a lightweight, non-distracting organization hub:
 
-## Installation & Setup
+- **Students**: For tracking assignments and revision points.  
+- **Busy Professionals**: For managing daily meeting agendas and quick reminders.  
+- **Minimalists**: For users who prefer a single, clean interface over complex project management software.
 
-Since this is a client-side web application, no server is required for basic viewing.
+---
 
-1.  **Clone the Repository:**
-    ```bash
-    Github Repo: https://github.com/john-joshua-m/MO-IT161_S3101_Group-2
-    ```
-2.  **Open:** Open the `index.html` file directly in your browser.
+## ✅ Success Metrics
 
-### Development Note
+We will know the project has met its goals if the following core functional requirements are met and maintained:
 
-The application is styled with a custom CSS framework using **Calibri** as the primary system font and **Pacifico** (imported) for script elements. The layout is optimized for mobile screens via a `@media` query, which will soon be implemented.
+- **Data Persistence**: To-do list items and sticky notes remain visible and intact after a page reload, managed by Vue component state and Local Storage.  
+- **Theme Persistence**: The Dark Mode setting persists after a page reload, reflecting the user's last choice via Local Storage.  
+- **Responsiveness**: The layout adapts smoothly from a multi-column desktop view to a single-column mobile view using Bootstrap's grid.  
+- **Reactivity**: Changes in the UI (e.g., checking a box) instantly update the underlying Vue data model.
 
-***
+---
 
-## Project Context
+## ⚙️ MVP (Minimum Viable Product) Inventory
 
-This project was developed as a demonstration of proficiency in:
-* HTML5 structure and semantic tags.
-* CSS Grid for complex multi-column layouts.
-* Flexbox for component alignment (e.g., in the header and buttons).
-* Client-side persistence using JavaScript and Local Storage.
+The following features represent the core functionality of the application and include acceptance criteria for successful completion:
+
+| Component / Action | Acceptance Criteria |
+|--------------------|--------------------|
+| **Add Task** | Adds new item to list → updates Vue Component State → persists to Local Storage → visible on reload. |
+| **Complete/Delete Task** | Task status/deletion is managed by Vue methods → change is reflected in Local Storage. |
+| **Sticky Note Edit** | Input updates Vue component data → note content saves to Local Storage on blur/change. |
+| **Toggle Dark Mode** | Instantly updates colors (via Vue state and Bootstrap classes) → preference persists after refresh. |
+| **Quote of the Day** | Successfully fetches and displays a new quote from the Quotable.io API on load. |
+| **Time Display** | Shows current system Hour:Minute:Second → updates reactively every second. |
+
+---
+
+## 💻 Live Demo
+**[To Follow]**

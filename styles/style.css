@@ -1,41 +1,101 @@
+:root {
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --custom-light-background: #f3e8c8;
+  --custom-dark-background: #343a40; 
+  --custom-light-header-bg: antiquewhite;
+  --custom-dark-header-bg: #495057; 
+}
+
+:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 3px;
+  border-radius: 4px;
+} 
+
+
 body {
     margin: 0;
-    
 }
 
 .body-custom {
-    background-color: rgb(230, 213, 168);
 
+    background-color: var(--custom-light-background);
 }
 
-h1 {
-     border-bottom: 5px solid rgb(65, 70, 87);
+
+[data-bs-theme="dark"] .body-custom {
+    background-color: var(--custom-dark-background);
 }
+
+
+h1 #current-day {
+  font-family: 'Roboto', 'Calibri', sans-serif !important;
+  -webkit-text-stroke: 0 !important;
+  color: var(--bs-body-color) !important;
+  text-shadow: none !important;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 4px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+[data-bs-theme="dark"] h1 #current-day {
+  background-color: rgba(0, 0, 0, 0.3); 
+}
+
 
 .h1-custom {
     font-family: 'Pacifico', 'calibri';
-    color: rgb(95, 104, 129);
-   
-    -webkit-text-stroke: 3px rgb(50, 60, 87);
-    
+    color: var(--bs-body-color);
+    -webkit-text-stroke: 3px var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .h1-custom {
+    -webkit-text-stroke: 3px var(--bs-gray-400); 
 }
 
 #h1-gif-block {
-    background-color: antiquewhite;
+    background-color: var(--custom-light-header-bg);
     padding: 15px;
     border-radius: 12%;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    text-shadow: -2px -4px 0 rgb(233, 202, 117);
+    text-shadow: none;
+}
+
+[data-bs-theme="dark"] #h1-gif-block {
+    background-color: var(--custom-dark-header-bg);
 }
 
 .h1-text-custom {
     margin-left: 30px;
 }
 
+
+
+h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+  font-family: 'Roboto', 'Calibri', sans-serif;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+body, p, span, input, button, li, label, textarea {
+  color: var(--bs-body-color) !important; 
+  line-height: 1.6;
+}
+
 .date-div {
-    font-family: 'caveat', 'calibri';
-    -webkit-text-stroke: 1px rgb(50, 60, 87);
-    font-size: 30px;
+    color: var(--bs-body-color);
+    -webkit-text-stroke: .5px var(--bs-body-color);
+    font-size: 20px;
+}
+
+[data-bs-theme="light"] .text-muted {
+    color: var(--bs-gray-700) !important; 
 }
 
 main {
@@ -51,8 +111,30 @@ main {
     box-shadow: 5px 5px 10px rgba(18, 9, 34, 0.5);
 }
 
+[data-bs-theme="dark"] .card {
+    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.1); 
+}
+
+[data-bs-theme="dark"] .quote-container {
+    background-color: var(--bs-card-bg) !important;
+}
+
+#dark-mode[data-bs-theme="dark"] {
+
+    background-color: #f8f9fa !important; 
+    color: #212529 !important;
+    border-color: #212529 !important;
+
+}
 
 
+#dark-mode[data-bs-theme="light"] {
+
+    background-color: #0dcaf0 !important; 
+    color: #ffffff !important;
+    border-color: #0dcaf0 !important;
+
+}
 
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
