@@ -50,4 +50,9 @@ The following features represent the core functionality of the application and i
 ---
 
 ## 💻 Live Demo
-**[To Follow]**
+
+Watch the full 14-minute walkthrough:
+
+[![Tick and Type Demo](https://img.youtube.com/vi/fyWrZqWfVSA/0.jpg)](https://www.youtube.com/watch?v=fyWrZqWfVSA)
+
+*(Click the thumbnail to play on YouTube)*
