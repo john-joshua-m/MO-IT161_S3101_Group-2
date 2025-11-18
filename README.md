@@ -49,6 +49,27 @@ The following features represent the core functionality of the application and i
 
 ---
 
+## 📎 Important Links
+
+Here are all essential project resources for quick access:
+
+GitHub Repository – Source code, components, and commits
+👉 [Github Repository](https://github.com/john-joshua-m/MO-IT161_S3101_Group-2/)
+
+Github Page - Live webpage deployment
+👉 [Deployed Website on Github Page](https://john-joshua-m.github.io/MO-IT161_S3101_Group-2/)
+
+Demo Video - Uploaded Demo Video of the Tick and Type Web Organizer
+👉 [Direct Link to the Demo Video](https://www.youtube.com/watch?v=fyWrZqWfVSA)
+
+Wireframe Document  – Wireframes, functional, and non-functional requirements
+👉 [Wireframe Document](https://docs.google.com/document/d/1_42LrME1qCoSuTG8LQgnkehNPyJXan7W4VoggbZ-WhQ/edit?usp=sharing)
+
+Project Documentation – Full technical write-up and development notes
+👉 [Tick and Type: Road to an organized Daily Life - Project Documentation](https://docs.google.com/document/d/1K67pefAK7TMoCCaQD3AVV2d7jRTm24he/edit?usp=sharing&ouid=100485519298275829635&rtpof=true&sd=true)
+
+---
+
 ## 💻 Live Demo
 
 Watch the full 14-minute walkthrough:
